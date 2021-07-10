@@ -27,7 +27,14 @@ for B_p in B_X: # do
     print("length:", length)
     for i in range(1, length):
         for j in range(i + 1, length):
-            E.append([B_p[i], distance(B_p[i], B_p[j]), B_p[j]])
+            E.append(tuple([B_p[i], distance(B_p[i], B_p[j]), B_p[j]]))
+
+E = set(E)
 
 for edge in E:
-    print("{} --{}--> {}".format(edge[0], edge[1], edge[2]))
+    print("{} <---{}---> {}".format(edge[0], edge[1], edge[2]))
+
+print()
+
+for edge in E:
+    print("({}, {}) = {}".format(edge[0], edge[2], edge[1]))
