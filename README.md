@@ -1,2 +1,2 @@
-# Ball-mapper
-topological data analysis algorithms
+# Ball_mapper
+Topological data analysis algorithms
