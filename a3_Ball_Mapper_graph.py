@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 
 ##### input #####
 E = []
-from a1_greedy_ε_net import * # Cover vector B(X, ε)
+from a1_greedy_ε_net import * # Cover vector B(X, ε), Point cloud X, ε > 0
 # if you cannot run this line, simply copy & paste Algorithm 1 instead.
 
 ##### main #####
