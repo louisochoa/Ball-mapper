@@ -74,6 +74,9 @@ for edge in E:
         else:
             print("WTF!!!!!!!!!!!!!!!!!!!!!!")
 
+for x in X:
+    plt.plot(x.real, x.imag, 'ko')
+
 ax.set_xlabel('real')  # Add an x-label to the axes.
 ax.set_ylabel('imaginary')  # Add a y-label to the axes.
 ax.set_title("Graph of the point cloud X")  # Add a title to the axes.
