@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 
 ##### input #####
 E = []
-from a1_greedy_ε_net import * # Cover vector B(X, ε), Point cloud X, ε > 0
+from a2_max_min_ε_net import * # Cover vector B(X, ε), Point cloud X, ε > 0
 # if you cannot run this line, simply copy & paste Algorithm 1 instead.
 
 ##### main #####
@@ -74,8 +74,8 @@ for edge in E:
         else:
             print("WTF!!!!!!!!!!!!!!!!!!!!!!")
 
-for x in X:
-    plt.plot(x.real, x.imag, 'ko')
+for c in C:
+    plt.plot(c.real, c.imag, 'ko')
 
 ax.set_xlabel('real')  # Add an x-label to the axes.
 ax.set_ylabel('imaginary')  # Add a y-label to the axes.
