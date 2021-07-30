@@ -59,7 +59,8 @@ def distance(*args): #Euclidean distance between a point and a another point or 
 
 def B(p, ε): #considering the center (p) of open balls
     B = []
-    B.append("B({}, {}) ∩ X =".format(p, ε)) # just for legibility
+    #B.append("B({}, {}) ∩ X =".format(p, ε)) # just for legibility
+    #B.append(p) # the first element is the center p
     for x in X:
         if distance(x, p) < ε:
             B.append(x)
@@ -73,21 +74,42 @@ while True: # do
     p = None
     for q in X_minus_C:
         aux = distance(q, C)
+        
         if dist < aux:
             dist = aux
             p = q
-    C.append(p)
-    X_minus_C.remove(p)
-
+   
     if dist <= ε: # until
         break
+    C.append(p)
+    X_minus_C.remove(p)
+    
+    
 
 B_X = [] # B(X, ε)
+aux = []
+for x in X:
+    aux.append(x)
+    B_X.append(aux)
+    aux = []
 
+#print("", B_X)    
+
+B_C = [] # B(C, ε)
+B_p = []
 for p in C:
-    B_X.append(B(p, ε)) #B(X, ε)
+    B_p = B(p, ε)
+    B_C.append(B_p) #B(C, ε)
+    #print("B_p", B_p)
+    for x in B_p:
+        B_X[X.index(x)].append(p)
+    #print("B_X", B_X)
 
 print("ε =", ε)
 print("X =", X)
 print("C =", C)
-print("B(X, ε) =", B_X) #B(X, ε)
+print("B(C, ε) =", B_C) #B(C, ε)
+
+print("B_X = \n", end = '')
+for x in B_X:
+    print(x)
